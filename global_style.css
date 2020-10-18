@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&display=swap');
+:root {
+    --primary-color: #27576E;
+    --accent-color: #FFD700;
+    --primary-color-dark: #ff00;
+    --global-font: 'Cinzel Decorative', cursive;
+}
+
+p {
+    font-family: var(--global-font);
+}
+
+body {
+    margin: 0;
+}
+
+.topnav {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: white;
+    border-bottom: 5px solid;
+    z-index: 10;
+    opacity: 0.97;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 20px;
+    border: 2px solid;
+    line-height: 1;
+    background: none;
+    font: 300 1em var(--global-font);
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+
+.topnav a:hover {
+    box-shadow: inset 200px 0 0 0 var(--accent-color);
+}
+
+.topnav p {
+    font: 300 1em var(--global-font);
+    float:left;
+    display: block;
+    color: black;
+    padding: 0px 12px;
+    font-size: 25px;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .topnav a {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: flex;
+    }
+
+    #fisrtMenuItem {
+        margin-top: 75px;
+    }
+
+    .topnav a:hover {
+        box-shadow: inset 860px 0 0 0 var(--accent-color);
+    }   
+    .topnav a {
+        margin-right: 17px;
+    }   
+}    
+
+@media screen and (max-width: 900px) {
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+.secondary-button {
+    border-radius: 4px;
+    background-color: black;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 16px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    font-family: var(--global-font);
+}
+
+.secondary-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.secondary-button span::after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.secondary-button:hover span {
+    padding-right: 25px;
+}
+
+.secondary-button:hover span::after {
+    opacity: 1;
+    right: 0;
+}
+
+.primary_button {
+    cursor: pointer;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 10px;
+    border: 2px solid;
+    line-height: 1;
+    background: none;
+    font: 300 1em var(--global-font);
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+
+.primary_button:hover {
+    box-shadow: inset 150px 0 0 0 var(--accent-color);
+}

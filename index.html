@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Icons file -->
+<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+<!-- Navbar style file-->
+<link rel="stylesheet" type="text/css" href="global_style.css">
+<style>
+    .background_photo {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 100vw;
+        object-fit: none; /* Do not scale the image */
+        object-position: center; /* Center the image within the element */
+    }
+    body h2 {
+        top: 80px;
+        left: 30px;
+        margin: 46px;
+        position: absolute;
+        z-index: 2;
+        font-family: var(--global-font);
+        animation-name: text_enter;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes text_enter {
+        from { left: 0px; opacity: 0;}
+        to { left: 30px; opacity: 1;}
+    }
+
+    @media screen  and (max-width: 500px){
+        body h2 {
+            font-size: 20px;
+        }
+    }
+
+
+</style>
+<div class="topnav" id="myTopnav">
+    <p>La Almohada</p>
+    <a href="javascript:void(0);" style="margin-right: 10px;" class="icon" onclick="openMenu()"> <i class="fa fa-bars"></i></a>
+    <a href="./index.html" style="margin-right: 20px;" id="fisrtMenuItem">Incio</a>
+    <a href="./encuentranos.html">Encuéntranos</a>
+    <a href="./reservas.html">Reservas</a>
+    <a href="./enlaces_de_interes.html">Enlaces de interés</a>
+</div>
+<body>
+    <img src="./Media/Welcome.jpg" class="background_photo">
+    <h2>Los números pares siempre tendrán pareja y los números imapares siempre estarán solos.
+        Pero no te preocupes, en la almohada tenemos habitaciones individuales, dobles  y triples.
+    </h2>
+</body>
+</head>
+<script>
+    function openMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    };
+</script>
+</html>

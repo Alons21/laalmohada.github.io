@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Icons file -->
+<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+<!-- Navbar style file-->
+<link rel="stylesheet" type="text/css" href="global_style.css">
+<!-- Slideshow file-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .parent_container {
+      display: flex;
+      flex: 50%;
+      flex-direction: row;
+    }
+
+    .room_title {
+        font-size: 35px;
+        margin: 16px;
+    }
+
+    .small_description {
+        font-size: 18px;
+        margin: 16px;
+    }
+
+    .mySlides {
+      transition: 2s ease;
+      animation-name: image_eneter;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+
+    #slideshow_container {
+      width: 50vw;
+    }
+
+    @keyframes image_eneter {
+        from {opacity: 0; }
+        to {opacity: 100; }
+    }
+
+  .make_reservation_zone input{
+    margin: 16px;
+    text-align: center;
+  }
+
+  .make_reservation_zone {
+    padding: 16px;
+    width: 50vw;
+    display: flex;
+  }
+
+  .make_reservation_zone p,button,input {
+    text-align: center;
+  }
+
+  #price {
+    margin: 16px;
+    font-size: 32px;
+    width: 50px;
+    flex-grow: 6;
+    text-align: end;
+  }
+
+  .section_title {
+    font-size: 20px;
+    width: max-content;
+  }
+
+  .contact_text {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 16px;
+        width: max-content;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        border-radius: 13px;
+        font-size: 25px;
+        transition: 0.5s ease;
+    }
+
+    .contact_text:hover {
+        transform: scale(1.03);
+    }
+
+    .contact_text i {
+        color: white; 
+        font-size: 30px; 
+        margin: 15px;
+    }
+
+    @media screen and (max-width: 480px) {
+        .contact_text {
+          font-size: 19px;
+          margin-left: 8px;
+        }
+        .contact_text i {
+          font-size: 24px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .parent_container {
+        flex: 100%;
+        flex-wrap: wrap;
+      }
+      #slideshow_container {
+        width: 100vw;
+      }
+      .make_reservation_zone {
+        padding: 16px;
+        width: 100vw;
+      }
+    }
+
+</style>
+<div class="topnav" id="myTopnav">
+    <p>La Almohada</p>
+    <a href="javascript:void(0);" style="margin-right: 10px;" class="icon" onclick="openMenu()"> <i class="fa fa-bars"></i></a>
+    <a href="./index.html" style="margin-right: 20px;" id="fisrtMenuItem">Incio</a>
+    <a href="./encuentranos.html">Encuéntranos</a>
+    <a href="./reservas.html">Reservas</a>
+    <a href="./enlaces_de_interes.html">Enlaces de interés</a>
+</div>
+<body>
+<div class="parent_container">
+<section class="about_room">
+    <p class="room_title">Habitación individual</p>
+    <p class="small_description">Pequeña descripción</p>
+    <div class="w3-content w3-display-container" id="slideshow_container">
+      <img class="mySlides" src="./Media/Habitaciones/Habitacion individual/almohada-18.jpg" style="width:100%">
+      <img class="mySlides" src="./Media/Habitaciones/Habitacion individual/almohada-19.jpg" style="width:100%">
+      <img class="mySlides" src="./Media/Habitaciones/Habitacion individual/almohada-20.jpg" style="width:100%">
+      <img class="mySlides" src="./Media/Habitaciones/Habitacion individual/almohada-21.jpg" style="width:100%">
+    
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+</section>
+<section class="make_reservation_zone">
+  <div class="info_part">
+  <p style="display: inline;">Desde</p>
+  <input type="date" id="input_first_date">
+  <p style="display: inline;">hasta</p>
+  <input type="date" id="input_second_date">
+  <button class=secondary-button id="calculate_price_button" onclick="calculatePrice()"><span>Calcular</span></button>
+  <p id="price" style="display: inline;">0€</p>
+  <p class="section_title" style="margin: 16px;">Contacta con nosotros</p>
+  <div class="list_contact">
+      <p class="contact_text" style="background-color: #00A000;">
+          <i class="fab fa-whatsapp"></i>+34 627 47 25 53</p>
+      <p class="contact_text" style="background-color: #D93025;" id="mail_text">
+          <i class="far fa-envelope"></i>hospedajealmohada@yahoo.es</p>
+  </div>
+</section>
+</section>
+</div>
+</body>
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+    function openMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    };
+
+  function calculatePrice() {
+    var firstDate = new Date(document.getElementById("input_first_date").value);
+    console.log(firstDate);
+  }
+</script>

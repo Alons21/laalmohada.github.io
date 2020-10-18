@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+<!-- Navbar style file-->
+<link rel="stylesheet" type="text/css" href="global_style.css">
+<style>
+
+    .section_title {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .image_grid {
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .image_grid img {
+        width: 22%;
+        margin: 16px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .image_grid img  {
+            width: 43%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .image_grid img  {
+            width: 95%;
+        }
+    }
+
+    .image_section {
+        display: grid;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section_header i {
+        display: inline;
+        font-size: 30px;
+        margin: 20px;
+    }
+
+    .image_grid.displayed {
+        display: flex;
+        animation-name: image_eneter;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+    }
+
+    @keyframes image_eneter {
+        from {opacity: 0; }
+        to {opacity: 100; }
+    }
+
+    .rooms_group , .rooms_clasification, .list_contact {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .rooms_group {
+        display: none;
+    }
+    
+    .rooms_section img {
+        width: 350px;
+    }
+
+    .room_subtitle {
+        margin-left: 16px;
+        font-size: 22px;
+        width: 334px;
+    }
+    
+    .rooms_section .secondary-button {
+        display: block;
+        margin-bottom: 16px;
+        width: 240px;
+    }
+
+    .room {
+        border-bottom: black 5px solid;
+        border-top: black 5px solid;
+        margin:16px;
+    }
+
+    @media screen and (min-width: 1100px){
+        .rooms_section img {
+            width: 400px;
+        }
+        .room_subtitle {
+            width: 384px;
+        }
+    }
+    
+    .contact_text {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 16px;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        border-radius: 13px;
+        font-size: 25px;
+        transition: 0.5s ease;
+        position: relative;
+        display: flex;
+        align-items: center;
+        animation-name: text_enter;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+    }
+
+    .contact_text:hover {
+        transform: scale(1.03);
+    }
+
+    @media screen and (max-width: 480px) {
+        .contact_text {
+            transform: scale(0.85);
+        }
+        .contact_text:hover {
+            transform: scale(0.90);
+        }
+    }
+
+    .contact_section i {
+        color: white; 
+        font-size: 30px; 
+        margin: 15px;
+    }
+
+    .extra_info {
+        width: 100vw;
+        margin-bottom: 16px;
+    }
+
+    .extra_info {
+        border: black solid 2px;
+        width:70vw;
+        font-size: 18px;
+        margin: 16px;
+        padding: 16px;
+        position: relative;
+        animation-name: text_enter;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes text_enter {
+        from { left: -64px; opacity: 0;}
+        to { left: 0px; opacity: 1;}
+    }
+
+    @media screen and (min-width: 1000px){
+        .extra_info {
+            width: 60vw;
+        }
+    }
+
+    #hide_icon {
+        cursor: pointer;
+    }
+
+</style>
+<div class="topnav" id="myTopnav">
+    <p>La Almohada</p>
+    <a href="javascript:void(0);" style="margin-right: 10px;" class="icon" onclick="openMenu()"> <i class="fa fa-bars"></i></a>
+    <a href="./index.html" style="margin-right: 20px;" id="fisrtMenuItem">Incio</a>
+    <a href="./encuentranos.html">Encuéntranos</a>
+    <a href="./reservas.html">Reservas</a>
+    <a href="./enlaces_de_interes.html">Enlaces de interés</a>
+</div>
+<body>
+    <section class="rooms_section">
+    <p class="section_title">Habitaciones</p>
+    <div class="rooms_clasification">
+        <button class="primary_button" style="width: 150px;" onclick="selectTypeRoom(1)">Individual</button>
+        <button class="primary_button" style="width: 150px;" onclick="selectTypeRoom(2)">Doble</button>
+        <button class="primary_button" style="width: 150px;" onclick="selectTypeRoom(3)">Familiar</button>
+    </div>
+    <div id="individual_rooms" class="rooms_group">
+        <div class="room">
+        <img src="./Media/Habitaciones/Habitacion individual/almohada-19.jpg"><p class="room_subtitle">Individual</p><a class=secondary-button href="./habitacion_individual.html">
+            <span>Mas información</span>
+        </a>
+        </div>
+        <div class="room">
+        <img src="./Media/Habitaciones/Habitacion individual superior/almohada-27.jpg"><p class="room_subtitle">Individual superior</p></img>
+        <button class=secondary-button>
+            <span>Mas información</span>
+        </button>
+        </div>
+    </div>
+    <div id="double_rooms" class="rooms_group">
+        <div class="room">
+            <img src="./Media/Habitaciones/Habitacion doble con ventana a patio morisco/almohada-2.jpg"><p class="room_subtitle">Doble con ventana a patio morisco</p></img>
+            <button class=secondary-button>
+                <span>Mas información</span>
+            </button>
+        </div>
+        <div class="room">
+            <img src="./Media/Habitaciones/Habitacion doble clasica con balcon/almohada-40.jpg"><p class="room_subtitle">Doble clásica con balcon</p></img>
+            <button class=secondary-button>
+                <span>Mas información</span>
+            </button>
+        </div>
+        <div class="room">
+            <img src="./Media/Habitaciones/Habitacion doble con balcon/almohada-49.jpg"><p class="room_subtitle">Doble clásica con balcon</p></img>
+            <button class=secondary-button>
+                <span>Mas información</span>
+            </button>
+        </div>
+    </div>
+    <div id="familiar_rooms" class="rooms_group">
+        <div class="room">
+            <img src="./Media/Habitaciones/Habitacion familiar/almohada-12.jpg"><p class="room_subtitle">Familiar</p></img>
+            <button class=secondary-button>
+                <span>Mas información</span>
+            </button>
+        </div>
+    </div>
+        <p class="extra_info">Los baños son compartidos</p>
+        <p class="extra_info" style="height: 70px; margin-bottom: 45px; float: right;">¿Grupos grandes? ¡Reserva toda la casa!
+            <button class=secondary-button style="margin-top: 20px;">
+            <span>Mas información</span>
+        </button></p>
+    </section>
+    <section class="images_section" style="width: 100vw; margin-top: 200px;">
+        <div class="section_header">
+        <p class="section_title">Zonas comunes<a><i class="fas fa-eye" id="hide_icon" onclick="hideImages()"></i></p>
+        </div>
+        <div class="image_grid" id="zonas_comunes_imagenes">
+            <img src="./Media/Patio/almohada-93.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Recepcion/almohada-95.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Recepcion/almohada-97.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Escaleras/almohada-25.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Escaleras/almohada-26.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Escaleras/almohada-44.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Foto tejado.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-32.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-36.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-62.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-63.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-64.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-65.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Baños/almohada-66.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Cocina/almohada-78.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Cocina/almohada-80.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Cocina/almohada-83.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Cocina/almohada-85.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Cocina/almohada-86.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Cocina/almohada-87.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-69.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-71.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-75.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-76.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-77.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-88.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-89.jpg" style="margin-bottom: 16px;">
+            <img src="./Media/Comedor y saloncillo/almohada-91.jpg" style="margin-bottom: 16px;">
+        </div>
+    </section>
+    <section class="contact_section">
+        <p class="section_title" style="margin: 16px;">Contacta con nosotros</p>
+        <div class="list_contact">
+            <p class="contact_text" style="background-color: #00A000;">
+                <i class="fab fa-whatsapp"></i>+34 627 47 25 53</p>
+            <p class="contact_text" style="background-color: #D93025;">
+                <i class="far fa-envelope"></i>hospedajealmohada@yahoo.es</p>
+        </div>
+    </section>
+</body>
+</head>
+<script>
+    function hideImages() {
+        var x = document.getElementById("zonas_comunes_imagenes");
+        var hide_icon = document.getElementById("hide_icon");
+        if (x.className === "image_grid") {
+            x.className += " displayed"
+            hide_icon.setAttribute("class", "fas fa-eye-slash")
+        } else {
+            x.className = "image_grid"
+            hide_icon.setAttribute("class", "fas fa-eye")
+        }
+    }
+
+    function selectTypeRoom(typeofroom) {
+        var individual_rooms = document.getElementById("individual_rooms");
+        var double_rooms = document.getElementById("double_rooms");
+        var familiar_rooms = document.getElementById("familiar_rooms");
+        switch (typeofroom) {
+            case 1:
+                double_rooms.style.display = "none";
+                familiar_rooms.style.display = "none";
+                individual_rooms.style.display = "flex";
+                break;
+            case 2:
+                individual_rooms.style.display = "none";
+                familiar_rooms.style.display = "none";
+                double_rooms.style.display = "flex";
+                break;
+            case 3:
+                double_rooms.style.display = "none";
+                individual_rooms.style.display = "none";
+                familiar_rooms.style.display = "flex";
+                break;
+        }
+    }
+
+    function openMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    };
+</script>
+</html>

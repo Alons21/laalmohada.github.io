@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Icons file -->
+<link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+<!-- Navbar style file-->
+<link rel="stylesheet" type="text/css" href="global_style.css">
+<style>
+#find_parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 650px;
+    margin: 16px;
+}
+
+h1 {
+    font-family: var(--global-font);
+    font-size: 50px;
+    margin: 25px;
+    text-align: center;
+    animation-name: text_enter;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+@media screen and (max-width: 1500px) {
+    #find_parent {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 850px) {
+    iframe {
+        width: 90vw;
+        height: 600px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+}  
+
+@keyframes text_enter {
+        from { opacity: 0;}
+        to { opacity: 1;}
+    }
+
+   
+</style>
+<div class="topnav" id="myTopnav">
+    <p>La Almohada</p>
+    <a href="javascript:void(0);" style="margin-right: 10px;" class="icon" onclick="openMenu()"> <i class="fa fa-bars"></i></a>
+    <a href="./index.html" style="margin-right: 20px;" id="fisrtMenuItem">Incio</a>
+    <a href="./encuentranos.html">Encuéntranos</a>
+    <a href="./reservas.html">Reservas</a>
+    <a href="./enlaces_de_interes.html">Enlaces de interés</a>
+</div>
+<body>
+    <div id="find_parent">
+        <h1>Encuentranos en google maps</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.9581013460597!2d-3.6038636846994505!3d37.177466679872545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc9558de98c3%3A0xe321904aaefe3a26!2sHospedaje%20Almohada!5e0!3m2!1ses!2ses!4v1590336624598!5m2!1ses!2ses" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+</body>
+</head>
+<script>
+    function openMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    };
+</script>
+</html>
